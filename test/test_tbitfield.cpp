@@ -107,8 +107,8 @@ TEST(TBitField, can_assign_bitfields_of_equal_size)
   }
   bf2 = bf1;
 
-  EXPECT_NE(0, bf2.GetBit(0));
-  EXPECT_NE(0, bf2.GetBit(1));
+  EXPECT_NE(1, bf2.GetBit(0));
+  EXPECT_NE(1, bf2.GetBit(1));
 }
 
 TEST(TBitField, assign_operator_changes_bitfield_size)

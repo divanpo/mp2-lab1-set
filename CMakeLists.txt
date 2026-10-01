@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.5)
+add_definitions(-DGTEST_HAS_TR1_TUPLE=0)
 
 set(PROJECT_NAME set)
 project(${PROJECT_NAME})
@@ -33,3 +34,5 @@ message( STATUS "======================================")
 message( STATUS "")
 message( STATUS "   Configuration: ${CMAKE_BUILD_TYPE}")
 message( STATUS "")
+
+#add_executable(main test/test_main.cpp) #*
