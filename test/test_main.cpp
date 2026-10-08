@@ -1,6 +1,6 @@
 #include "tbitfield.h"
 #include "tset.h"
 
-int main();
+int main() {
 	return 0;
 }

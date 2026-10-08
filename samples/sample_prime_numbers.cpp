@@ -7,7 +7,7 @@
 
 #include <iomanip>
 
-// #define USE_SET // Использовать класс TSet,
+#define USE_SET // Использовать класс TSet,
                 // закоментировать, чтобы использовать битовое поле
 
 #ifndef USE_SET // Использовать класс TBitField
@@ -74,9 +74,13 @@ int main()
       for (k = 2 * m; k <= n; k += m)
        if (s.IsMember(k))
          s.DelElem(k);
+  s = ~s; // получаем непростые числа
+  for (m = 0; (2 * m + 1) < n; m++) {
+  	s.DelElem(2*m+1); // удаляем нечётные числа
+  }
   // оставшиеся в s элементы - простые числа
-  cout << endl << "Печать множества некратных чисел" << endl << s << endl;
-  cout << endl << "Печать простых чисел" << endl;
+  //cout << endl << "Печать множества некратных чисел" << endl << s << endl;
+  cout << endl << "Печать непростых чисел" << endl;
   count = 0;
   k = 1;
   for (m = 2; m <= n; m++)
@@ -88,7 +92,7 @@ int main()
         cout << endl;
     }
   cout << endl;
-  cout << "В первых " << n << " числах " << count << " простых" << endl;
+  cout << "В первых " << n << " числах " << count << " непростых" << endl;
 }
 
 #endif
